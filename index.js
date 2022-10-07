@@ -1,6 +1,7 @@
 import TelegramBot from "node-telegram-bot-api";
 import * as Service from "./services.js";
 import * as dotenv from "dotenv";
+import http from "http";
 
 dotenv.config();
 
@@ -34,11 +35,21 @@ bot.on("poll_answer", (msg, match) => {
   msg.bot.sendMessage(JSON.stringify());
 });
 
-console.log("Bot has been started");
-
 // (async () => {
 //   const mybot = await bot.getMe();
 //   bot.sendMessage(mybot.id, "Bot has been started");
 // })();
 
 Service.main(bot, resultadoInicial);
+
+const requestListener = (req, res) => {
+  res.writeHead(200);
+  res.end("HEALTH OK");
+};
+
+const server = http.createServer(requestListener);
+
+server.listen(process.env.PORT, process.env.HOST, () => {
+  console.log("Bot has been started");
+  console.log(`http://${process.env.host}:${process.env.PORT}`);
+});
