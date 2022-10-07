@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node .\\index"
+    "start": "node index"
   },
   "dependencies": {
     "deep-diff": "^1.0.2",
