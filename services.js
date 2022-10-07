@@ -56,8 +56,6 @@ export const start = (bot, resultadoInicial) => async (msg, match) => {
 };
 
 export const desativar = (bot) => async (msg, match) => {
-  isActive = false;
-
   const chatId = msg.chat.id;
 
   bot.sendMessage(
