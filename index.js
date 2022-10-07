@@ -51,7 +51,7 @@ const server = http.createServer(requestListener);
 
 const HOST = process.env.HOST || process.env.host;
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, HOST, () => {
+server.listen(PORT, "0.0.0.0", () => {
   console.log("Bot has been started");
   console.log(`http://${HOST}:${PORT}`);
 });
