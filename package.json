@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node .\\index"
+  },
   "dependencies": {
     "deep-diff": "^1.0.2",
     "dotenv": "^16.0.3",
